@@ -109,7 +109,7 @@ byte_list(L).
 
 byte_conversion(HexByte, BinByte).
 
-byte_list_conversion(HL, BL).
+byte_list_conversion(HL, BL). % Usa el anterior
 
 get_nth_bit_from_byte(N, B, BN).
 
