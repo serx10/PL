@@ -105,7 +105,22 @@ concatenar([X|L1],L2,[X|L3]):-
 
 %%%%%% PREDICADOS
 
-byte_list(L).
+byte_list([L|T]):-
+binary_byte(L),
+byte_list_Bin(T).
+
+byte_list([L|T]):-
+hex_byte(L),
+byte_list_Bin(T).
+
+byte_list_Bin([L|T]):-
+binary_byte(L),
+byte_list_Bin(T).
+
+byte_list_Hex([L|T]):-
+hex_byte(L),
+byte_list_Hex(T).
+
 
 byte_conversion(HexByte, BinByte).
 
