@@ -105,8 +105,6 @@ concatenar([X|L1],L2,[X|L3]):-
 
 %%%%%% PREDICADOS
 
-% byte_list
-
 byte_list([L|T]):-
 binary_byte(L),
 byte_list_Bin(T).
@@ -114,40 +112,25 @@ byte_list_Bin(T).
 byte_list([L|T]):-
 hex_byte(L),
 byte_list_Bin(T).
-
-byte_list_Bin(binary_byte(L)).
 
 byte_list_Bin([L|T]):-
 binary_byte(L),
 byte_list_Bin(T).
 
-byte_list_Hex(hex_byte(L)).
-
 byte_list_Hex([L|T]):-
 hex_byte(L),
 byte_list_Hex(T).
 
-% byte_conversion
 
 byte_conversion(HexByte, BinByte).
 
-% byte_list_conversion (Usa byte_conversion)
-
-byte_list_conversion(HL, BL).
-
-% get_nth_bit_from_byte
+byte_list_conversion(HL, BL). % Usa el anterior
 
 get_nth_bit_from_byte(N, B, BN).
 
-% byte_list_clsh
-
 byte_list_clsh(L, CLShL).
 
-% byte_list_crsh
-
 byte_list_crsh(L, CRShL).
-
-% byte_xor
 
 byte_xor(B1, B2, B3).
 
